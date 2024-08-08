@@ -1,0 +1,26 @@
+{
+    "colors" : {
+
+        "windowBackground":"#160629",
+        "labelBackground":"#2F0D59",
+        "labelTextColor":"#FFFFFF",
+        "labelBorderColor":"#52179C",
+        "buttonBackground":"#5E1BB1",
+        "buttonTextColor":"#FFFFFF",
+        "buttonBorderColor":"#C8A6F2",
+        "statusTextSuccess":"#84B08A",
+        "statusTextFailure":"#B08484",
+        "placeholderTextColor":"#FFFFFF"
+    },
+    "properties" : {
+        "ffmpegLocation":"ffmpeg\\ffmpeg.exe",
+        "windowIconLocation": "icon.ico",
+        "windowDimensions":[800, 500],
+        "windowResizable": [true,true],
+        "cornerRadius": 10,
+        "bordersEnabled": true,
+        "borderWidth": 2,
+        "font": "Inter Bold",
+        "fontSize": 20
+    }
+}
