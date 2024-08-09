@@ -2,7 +2,7 @@
 
 A straightforward desktop application for downloading YouTube videos and audio. With a modern interface built using `customtkinter` and powerful downloading via `yt-dlp`, this app ensures smooth and high-quality downloads. Its clean, customizable interface allows for easy adjustments to colors, fonts, and window size through a simple config file.
 
-![Screenshot](https://raw.githubusercontent.com/invader276/simple-youtube-downloader/2c59e1a5a6afdd738d3bd9f8157d82ecf2a48c30/assets/Screenshot.png)
+![Screenshot](assets/Screenshot.png)
 
 ## Table of Contents
 
