@@ -5,6 +5,7 @@ from json import load
 
 import customtkinter as ctk
 import yt_dlp
+from tktooltip import ToolTip
 
 
 class YouTubeDownloaderApp(ctk.CTk):
@@ -23,7 +24,11 @@ class YouTubeDownloaderApp(ctk.CTk):
         self.font = ctk.CTkFont(
             family=self.properties["font"], size=self.properties["fontSize"]
         )
+        self.smallerFont = ctk.CTkFont(
+            family=self.properties["font"], size=self.properties["smallerFontSize"]
+        )
         self.onlyAudio = ctk.StringVar(value="off")
+        self.pathIsLong = False
         self.is_downloading = False
         self._create_widgets()
         self._pack_widgets()
@@ -89,20 +94,20 @@ class YouTubeDownloaderApp(ctk.CTk):
             master=self.row3,
             text="Audio only",
             font=self.font,
-            checkbox_width=28,
-            checkbox_height=28,
+            checkbox_width=24,
+            checkbox_height=24,
             onvalue="on",
             offvalue="off",
             variable=self.onlyAudio,
             text_color=self.colors["labelTextColor"],
             fg_color=self.colors["labelBackground"],
             hover_color=self.colors["labelBorderColor"],
+            border_color=self.colors["labelBorderColor"],
         )
         self.labelStatus = ctk.CTkLabel(
             master=self.row4,
             text="",
-            font=ctk.CTkFont(family="Inter Bold", size=16),
-            text_color=self.colors["statusTextSuccess"],
+            font=self.smallerFont,
         )
         self.buttonDownload = ctk.CTkButton(
             master=self.row5,
@@ -118,6 +123,17 @@ class YouTubeDownloaderApp(ctk.CTk):
             hover_color=self.colors["buttonBorderColor"],
             command=self.download,
         )
+        ToolTip(
+            self.entryBrowse,
+            msg=self.tooltipMessage,
+            delay=1,
+            bg=self.colors["labelBackground"],
+            fg=self.colors["labelTextColor"],
+            font=self.smallerFont,
+        )
+
+    def tooltipMessage(self):
+        return self.path if self.pathIsLong else "Search for a folder on your device."
 
     def _pack_widgets(self):
         self.row1.pack()
@@ -158,8 +174,12 @@ class YouTubeDownloaderApp(ctk.CTk):
         limit = 40
         if len(text) > limit:
             text = text[:limit] + "..."
+            self.pathIsLong = True
         elif text == "":
+            self.pathIsLong = False
             return
+        else:
+            self.pathIsLong = False
         widget.configure(state="normal")
         widget.delete(0, ctk.END)
         widget.insert(0, text)
