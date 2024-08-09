@@ -84,7 +84,7 @@ class YouTubeDownloaderApp(ctk.CTk):
             font=self.font,
             corner_radius=self.properties["cornerRadius"],
             border_width=self.properties["borderWidth"],
-            border_color=self.colors["labelBorderColor"],
+            border_color=self.colors["buttonBorderColor"],
             fg_color=self.colors["buttonBackground"],
             text_color=self.colors["buttonTextColor"],
             hover_color=self.colors["buttonBorderColor"],
@@ -106,7 +106,8 @@ class YouTubeDownloaderApp(ctk.CTk):
         )
         self.labelStatus = ctk.CTkLabel(
             master=self.row4,
-            text="",
+            text="Start by entering a link",
+            text_color=self.colors["statusTextNeutral"],
             font=self.smallerFont,
         )
         self.buttonDownload = ctk.CTkButton(
@@ -117,7 +118,7 @@ class YouTubeDownloaderApp(ctk.CTk):
             font=self.font,
             corner_radius=self.properties["cornerRadius"],
             border_width=self.properties["borderWidth"],
-            border_color=self.colors["labelBorderColor"],
+            border_color=self.colors["buttonBorderColor"],
             fg_color=self.colors["buttonBackground"],
             text_color=self.colors["buttonTextColor"],
             hover_color=self.colors["buttonBorderColor"],
