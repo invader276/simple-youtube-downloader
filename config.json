@@ -21,6 +21,7 @@
         "bordersEnabled": true,
         "borderWidth": 2,
         "font": "Inter Bold",
-        "fontSize": 20
+        "fontSize": 20,
+        "smallerFontSize": 16
     }
 }
