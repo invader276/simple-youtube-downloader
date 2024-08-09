@@ -1,2 +1,2 @@
 # Simple YouTube Downloader
- A user-friendly desktop app for downloading YouTube videos and audio. With a clean and customizable interface, this tool is designed for simplicity and ease of use.
+A straightforward and intuitive desktop application for downloading YouTube videos and audio. Built with customtkinter for a modern interface and utilizing yt-dlp for powerful downloading capabilities, this app offers a seamless experience. The clean, customizable interface allows users to tweak settings like colors, fonts, and window dimensions via a simple config file, making it adaptable to individual preferences. Whether you’re saving videos for offline viewing or extracting audio, this tool delivers a reliable solution tailored for ease of use.
